@@ -32,9 +32,7 @@ function foo(arr) {
       thangcho.b[thangcho.b.length - 1]++;
     }
     prev = arr[i];
-    let result = thangcho;
   }
   return thangcho;
 }
-
-console.log(foo(["[" + result[0] + "]<br>[" + result[1] + "]"]));
+console.log(foo([1, 1, 1, 2, 2, 3, 4, 5]));
