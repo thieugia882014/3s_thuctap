@@ -1,11 +1,9 @@
 // function a(arr) {
 //   const len = arr.length;
-//   let dev = {};
+
 //   for (let i = len - 1; i >= 0; i--) {
-//     dev[i] = [];
 //     for (let j = 1; j <= i; j++) {
-//       dev[i].push(j);
-//       if (arr[j - 1] < arr[j]) {
+//       if (arr[j - 1] < arr[j] ) {
 //         let temp = arr[j - 1];
 //         arr[j - 1] = arr[j];
 //         arr[j] = temp;
@@ -16,7 +14,6 @@
 // }
 // console.log(a([1, 4, 3, 5, 6, 9]));
 
-//var arr = [2, 2, 2, 2, 2, 4, 5, 5, 5, 9,9,3,3,3,3,3];
 function foo(arr) {
   let thangcho = {
     a: [],
@@ -36,3 +33,19 @@ function foo(arr) {
   return thangcho;
 }
 console.log(foo([1, 1, 1, 2, 2, 3, 4, 5]));
+
+// function a(arr) {
+//   const len = arr.length;
+//   let tong = [];
+//   for (let i = len - 1; i >= 0; i--) {
+//     for (let j = 1; j <= i; j++) {
+//       if (tong[j - 1] < tong[j] ) {
+//         let temp = tong[j - 1];
+//         tong[j - 1] = tong[j];
+//         tong[j] = temp;
+//       }
+//     }
+//   }
+//   return tong;
+// }
+// console.log(a([1, 4, 3, 5, 6, 9]));
