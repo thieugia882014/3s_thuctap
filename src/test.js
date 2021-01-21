@@ -1,51 +1,69 @@
-// function a(arr) {
-//   const len = arr.length;
-
-//   for (let i = len - 1; i >= 0; i--) {
-//     for (let j = 1; j <= i; j++) {
-//       if (arr[j - 1] < arr[j] ) {
-//         let temp = arr[j - 1];
-//         arr[j - 1] = arr[j];
-//         arr[j] = temp;
-//       }
+// function count(item, arr) {
+//   let count = 0;
+//   for (var i = 0; i < arr.length; i++) {
+//     if (arr[i] == item) count++;
+//   }
+//   return count;
+// }
+// function mang(arr) {
+//   let max = 0;
+//   let result = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     let _count = count(arr[i], arr);
+//     if (_count > max) {
+//       max = _count;
+//       result = arr[i];
 //     }
 //   }
-//   return arr;
+//   return result;
 // }
-// console.log(a([1, 4, 3, 5, 6, 9]));
+// console.log(mang([1, 2, 3, 4, 1, 4, 5]));
 
-function foo(arr) {
-  let thangcho = {
-    a: [],
-    b: []
-  };
-  let prev;
-  arr.sort();
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== prev) {
-      thangcho.a.push(arr[i]);
-      thangcho.b.push(1);
-    } else {
-      thangcho.b[thangcho.b.length - 1]++;
+// function count(item, arr) {
+//   let count = 0;
+//   for (var i = 0; i < arr.length; i++) {
+//     if (arr[i] === item) count++;
+//   }
+//   return count;
+// }
+// function mang(arr) {
+//   let max = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     let _count = count(arr[i], arr);
+//     if (_count > max) {
+//       max = _count;
+//     }
+//   }
+//   let result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (count(arr[i], arr) === max && result.indexOf(arr[i]) === -1) {
+//       result.push(arr[i]);
+//     }
+//   }
+//   return result;
+// }
+// console.log(mang([1, 2, 3, 4, 1, 4, 5, 5]));
+
+function descendingArrangement(array8) {
+  const length = array8.length;
+  let dev = [];
+  for (let i = length - 1; i >= 0; i--) {
+    dev[i] = [];
+    for (let j = 1; j <= i; j++) {
+      dev[i].push(j);
+      if (array8[j - 1] < array8[j]) {
+        let temp = array8[j - 1];
+        array8[j - 1] = array8[j];
+        array8[j] = temp;
+      }
     }
-    prev = arr[i];
   }
-  return thangcho;
+  let x;
+  for (let i = 0; i < array8.length; i++) {
+    if (array8[i].length % 2 === 0) {
+      x.push(array8[i].length);
+    }
+  }
+  return x;
 }
-console.log(foo([1, 1, 1, 2, 2, 3, 4, 5]));
-
-// function a(arr) {
-//   const len = arr.length;
-//   let tong = [];
-//   for (let i = len - 1; i >= 0; i--) {
-//     for (let j = 1; j <= i; j++) {
-//       if (tong[j - 1] < tong[j] ) {
-//         let temp = tong[j - 1];
-//         tong[j - 1] = tong[j];
-//         tong[j] = temp;
-//       }
-//     }
-//   }
-//   return tong;
-// }
-// console.log(a([1, 4, 3, 5, 6, 9]));
+console.log(descendingArrangement([1, 4, 3, 5, 6, 9]));
