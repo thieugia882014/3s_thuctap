@@ -14,7 +14,7 @@ function parity(array2) {
     odd: []
   };
   array2.forEach(function (item, index) {
-    if (item % 2 == 0) result.even.push(item);
+    if (item % 2 === 0) result.even.push(item);
     else result.odd.push(item);
   });
   return result;
@@ -96,17 +96,13 @@ function descendingArrangement(array8) {
 console.log(descendingArrangement([1, 4, 3, 5, 6, 9]));
 
 /* Sắp xếp các phần tử chẵn giảm dần */
-function evenElementArrangement(array9) {
-  let length = array9.length;
-  let even = [];
-  for (let i = 0; i < length; i++) {
-    if (array9[i] % 2 === 0) {
-      even.push(array9[i]);
-    }
-  }
-  for (let i = 0; i < array9[i] - 1; i++) {
-    even[i] = [];
+function aaaa(array9) {
+  const length = array9.length;
+  let dev = [];
+  for (let i = length - 1; i >= 0; i--) {
+    dev[i] = [];
     for (let j = 1; j <= i; j++) {
+      dev[i].push(j);
       if (array9[j - 1] < array9[j]) {
         let temp = array9[j - 1];
         array9[j - 1] = array9[j];
@@ -114,9 +110,21 @@ function evenElementArrangement(array9) {
       }
     }
   }
-  return even;
+  // let x = [];
+  // for (let i = 0; i < array9.length; i++) {
+  //   if (array9[i] % 2 == 0) {
+  //     x.push(array9[i]);
+  //   }
+  // }
+  let x = [];
+  array9.forEach(function (item, index) {
+    if (item % 2 === 0) {
+      x.push(item);
+    }
+  });
+  return x;
 }
-console.log(evenElementArrangement([1, 2, 3, 4, 5, 6, 7]));
+console.log(aaaa([1, 4, 3, 8, 10, 5, 6, 9]));
 
 /* Xóa phần tử tại vị trí lẻ trong mảng */
 function deleteOddPosition(array10) {

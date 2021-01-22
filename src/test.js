@@ -44,26 +44,32 @@
 // }
 // console.log(mang([1, 2, 3, 4, 1, 4, 5, 5]));
 
-function descendingArrangement(array8) {
-  const length = array8.length;
+function descendingArrangement(array9) {
+  const length = array9.length;
   let dev = [];
   for (let i = length - 1; i >= 0; i--) {
     dev[i] = [];
     for (let j = 1; j <= i; j++) {
       dev[i].push(j);
-      if (array8[j - 1] < array8[j]) {
-        let temp = array8[j - 1];
-        array8[j - 1] = array8[j];
-        array8[j] = temp;
+      if (array9[j - 1] < array9[j]) {
+        let temp = array9[j - 1];
+        array9[j - 1] = array9[j];
+        array9[j] = temp;
       }
     }
   }
-  let x;
-  for (let i = 0; i < array8.length; i++) {
-    if (array8[i].length % 2 === 0) {
-      x.push(array8[i].length);
+  // let x = [];
+  // for (let i = 0; i < array9.length; i++) {
+  //   if (array9[i] % 2 == 0) {
+  //     x.push(array9[i]);
+  //   }
+  // }
+  let x = [];
+  array9.forEach(function (item, index) {
+    if (item % 2 === 0) {
+      x.push(item);
     }
-  }
+  });
   return x;
 }
-console.log(descendingArrangement([1, 4, 3, 5, 6, 9]));
+console.log(descendingArrangement([1, 4, 3, 8, 10, 5, 6, 9]));
