@@ -66,6 +66,34 @@
 
 // let console.log("Count = " + the_Gioi_Di_Dong.length);
 
+let the_Gioi_Di_Dong = [
+  {
+      name: "iphone 6s plus",
+      price: 100,
+      sold_quantity: 100
+  },
+  {
+      name: "iphone11 pro max",
+      price: 1000,
+      sold_quantity: 80
+  },
+  {
+      name: "iphone 22",
+      price: 10000,
+      sold_quantity: 20
+  },
+  {
+      name: "samsung j6",
+      price: 500,
+      sold_quantity: 250
+  },
+  {
+      name: "vivo neoQQQ",
+      price: 20,
+      sold_quantity: 10
+  }
+];
+
 // Tìm ra mặt hàng bán chạy nhất và doanh thu mặt hàng
 // let super_Max = [];
 // let tong = 0;
@@ -109,3 +137,19 @@
 //   "mặt hàng bán chậm nhất = " +
 //     delete_sold_quantity((the_Gioi_Di_Dong[0].sold_quantity))
 // );
+function delete_sold_quantity() {
+  let min = the_Gioi_Di_Dong[0];
+
+  for (let i = 0; i < the_Gioi_Di_Dong.length; i++) {
+    if (min.sold_quantity > the_Gioi_Di_Dong[i].sold_quantity) {
+      min = the_Gioi_Di_Dong[i];
+    }
+  }
+  let address = the_Gioi_Di_Dong.indexOf(min);
+  the_Gioi_Di_Dong.splice(address, 1);
+
+  return min;
+}
+console.log(delete_sold_quantity());
+
+console.log(the_Gioi_Di_Dong);
