@@ -22,11 +22,11 @@ let the_Gioi_Di_Dong = [
   },
   {
     name: "iphone 22",
-    price: 10000,
+    price: 100000,
     sold_quantity: 20,
     trademark: "iphone",
     output() {
-      // console.log(this.name, this.sold_quantity);
+      console.log(this.name, this.sold_quantity);
     },
     total() {
       return this.price * this.sold_quantity;
@@ -58,7 +58,8 @@ console.log(the_Gioi_Di_Dong[0]);
 // - Viết một hàm trong object để in ra tên sản phẩm + số lượng đã bán
 the_Gioi_Di_Dong[2].output();
 // - Viết một hàm trong object để tính tổng số tiền đã bản của sản phẩm
-the_Gioi_Di_Dong[3].total();
+console.log(the_Gioi_Di_Dong[3].total());
+
 // - Tính tổng doanh thu của cửa hàng
 let total = 0;
 function totalRevenue() {
@@ -67,7 +68,7 @@ function totalRevenue() {
   }
   return total;
 }
-//console.log("Tổng doanh thu của cửa hàng là: " + totalRevenue());
+console.log("Tổng doanh thu của cửa hàng là: " + totalRevenue());
 
 // - Lấy ra sản phẩm có doanh thu nhỏ nhất và xóa đi
 function deleteRevennueMin() {
@@ -83,14 +84,15 @@ function deleteRevennueMin() {
 }
 console.log(deleteRevennueMin());
 console.log(the_Gioi_Di_Dong);
-// // - Lấy ra sản phẩm có doanh thu lớn nhất sử dụng Object.Values
+// - Lấy ra sản phẩm có doanh thu lớn nhất sử dụng Object.Values
 function revenueMax() {
-  let result = the_Gioi_Di_Dong[0].total();
+  let result = the_Gioi_Di_Dong[0];
   for (let i = 0; i < the_Gioi_Di_Dong.length; i++) {
-    if (result < the_Gioi_Di_Dong[i].total()) {
-      result = Object.values(the_Gioi_Di_Dong[i]);
+    if (result.total() < the_Gioi_Di_Dong[i].total()) {
+      result = the_Gioi_Di_Dong[i];
     }
   }
+  console.log(Object.values(result));
   return result;
 }
 console.log(revenueMax());
@@ -102,7 +104,7 @@ function copy(array) {
 }
 console.log(
   copy([
-    { name: "oppo reno5", price: 400, trademark: "oppo", sold_quantity: 100 }
+    { name: "black start", price: 400, trademark: "black", sold_quantity: 100 }
   ])
 );
 
